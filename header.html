@@ -1,0 +1,30 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Open+Sans:wght@300;400;600&display=swap');
+    body { font-family: 'Open Sans', sans-serif; background-color: #FFFFFF; color: #000000; margin: 0; }
+    h1, h2, h3, h4, h5, h6 { font-family: 'Montserrat', sans-serif; }
+    .nav-link { color: #000000; text-decoration: none; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; transition: color 0.3s; }
+    .nav-link:hover { color: #666666; }
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-content { display: none; position: absolute; background-color: #FFFFFF; min-width: 240px; box-shadow: 0px 8px 24px rgba(0,0,0,0.05); z-index: 50; top: 100%; border: 1px solid #EEEEEE; }
+    .dropdown:hover .dropdown-content { display: block; }
+    .dropdown-content a { color: #000000; padding: 16px 24px; text-decoration: none; display: block; font-size: 12px; letter-spacing: 0.5px; border-bottom: 1px solid #F5F5F5; }
+    .dropdown-content a:hover { background-color: #FAFAFA; }
+</style>
+<header style="padding: 30px 5vw; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #EEEEEE; background: #FFFFFF;">
+    <div style="max-width: 180px;">
+        <a href="https://www.melbournerenopro.com.au/"><img src="https://www.melbournerenopro.com.au/image/logo.png" alt="Melbourne Reno Pro" style="width: 100%; height: auto; filter: grayscale(100%);"></a>
+    </div>
+    <nav style="display: flex; gap: 40px; align-items: center;">
+        <a href="https://www.melbournerenopro.com.au/" class="nav-link">Home</a>
+        <div class="dropdown">
+            <a href="#" class="nav-link">Projects</a>
+            <div class="dropdown-content">
+                <a href="https://www.melbournerenopro.com.au/windows-ordering.html" class="nav-link" style="font-size:12px;">Windows Ordering</a>
+                <a href="https://www.melbournerenopro.com.au/cabinets-ordering.html" class="nav-link" style="font-size:12px;">Cabinets Ordering</a>
+            </div>
+        </div>
+        <a href="https://www.waverleygrannyflats.com.au" target="_blank" class="nav-link">Waverley Granny Flat</a>
+        <a href="https://portal.melbournerenopro.com.au/query_project.php" class="nav-link">Project Upload</a>
+        <a href="tel:0391125758" style="padding: 12px 24px; background-color: #000000; color: #FFFFFF; text-decoration: none; font-size: 12px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;">Call Us</a>
+    </nav>
+</header>
