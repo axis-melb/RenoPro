@@ -22,7 +22,19 @@
             }
         }
     </script>
-    <style>.group:hover .group-hover\:block { display: block; } html { scroll-behavior: smooth; }</style>
+    <style>.group:hover .group-hover\:block { display: block; } html { scroll-behavior: smooth; }#mobile-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.35s ease;
+}
+#mobile-menu.open { max-height: 500px; }
+#hamburger span {
+    display: block; width: 24px; height: 2px;
+    background: #000; transition: all 0.3s ease; transform-origin: center;
+}
+#hamburger.open span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+#hamburger.open span:nth-child(2) { opacity: 0; }
+#hamburger.open span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }</style>
 </head>
 <body class="bg-white text-black font-sans antialiased">
 
@@ -49,9 +61,21 @@
                     <a href="https://www.waverleygrannyflats.com.au" target="_blank" class="text-[13px] font-semibold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Waverley Granny Flat</a>
                     <a href="https://doc.melbournerenopro.com.au/query_project.php" target="_blank" class="text-[13px] font-semibold tracking-widest uppercase text-black hover:text-gray-500 transition-colors">Project Upload</a>
                     <a href="#contact" class="px-6 py-3 bg-black text-white text-[12px] font-semibold tracking-widest uppercase hover:bg-gray-800 transition-colors">Get in Touch</a>
-                </nav>
+                </nav><button id="hamburger" class="md:hidden flex flex-col gap-[6px] p-2 -mr-2">
+    <span></span><span></span><span></span>
+</button>
             </div>
-        </div>
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-gray-100">
+    <nav class="px-6 py-4 flex flex-col gap-1">
+        <a href="index.html" class="py-3 text-[13px] font-semibold tracking-widest uppercase border-b border-gray-100">Home</a>
+        <a href="projects.html" class="py-3 text-[13px] font-semibold tracking-widest uppercase border-b border-gray-100">View All Projects</a>
+        <a href="windows-ordering.html" class="py-3 text-[13px] font-semibold tracking-widest uppercase text-gray-600 border-b border-gray-100 pl-4">↳ Windows Ordering</a>
+        <a href="cabinets-ordering.html" class="py-3 text-[13px] font-semibold tracking-widest uppercase text-gray-600 border-b border-gray-100 pl-4">↳ Cabinets Ordering</a>
+        <a href="https://www.waverleygrannyflats.com.au" target="_blank" class="py-3 text-[13px] font-semibold tracking-widest uppercase border-b border-gray-100">Waverley Granny Flat</a>
+        <a href="https://doc.melbournerenopro.com.au/query_project.php" target="_blank" class="py-3 text-[13px] font-semibold tracking-widest uppercase border-b border-gray-100">Project Upload</a>
+        <a href="#contact" class="mt-3 py-3 px-6 bg-black text-white text-[12px] font-semibold tracking-widest uppercase text-center">Get in Touch</a>
+    </nav>
+</div></div>
     </header>
 
     <!-- 页面标题 -->
@@ -185,5 +209,10 @@
         </div>
     </footer>
 
-</body>
+<script>
+    const h = document.getElementById('hamburger');
+    const m = document.getElementById('mobile-menu');
+    h.addEventListener('click', () => { h.classList.toggle('open'); m.classList.toggle('open'); });
+    m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { h.classList.remove('open'); m.classList.remove('open'); }));
+</script></body>
 </html>
