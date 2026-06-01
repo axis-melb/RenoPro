@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /member/
+Disallow: /viewgallery/
+Disallow: /custom/
+Disallow: /login/
+Disallow: /cdn-cgi/
+
+Sitemap: https://melbournerenopro.com.au/sitemap.xml
